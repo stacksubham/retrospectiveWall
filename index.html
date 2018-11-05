@@ -1,0 +1,67 @@
+<!DOCTYPE>
+
+<head>
+    <title>Retrospective Wall </title>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scal=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 role="title">Retrospective Wall</h1>
+        <div class="filter">
+            <label for="view selection">View Section:</label>
+            <select id="filter" onchange="filterResult(this)">
+                <option value="None" role="None Selected">None Selected</option>
+                <option value="keep" role="Keep">Keep</option>
+                <option value="Leave" role="Improve">Improve</option>
+                <option value="start" role="Start">Start</option>
+                <option value="action" role="Stop">Action</option>
+                <option value="all" role="Show All">Show All</option>
+            </select>
+        </div>
+        <section class="wall">
+            <div class="_firstWall" id="whatWentWell">
+                <div class="heading">
+                    <h4 role="heading">What Went Well</h4> <button role="addCardButton" id="btn addWall" onclick="addWall(this)"><i
+                            class="fas fa-plus-circle"></i></i></button>
+                </div>
+                <section id="whatWentWellSection" class="card">
+                    
+                </section>
+            </div>
+            <div class="_secondWall" id="whatCanBeImproved">
+                <div role="heading" class="heading">
+                    <h4>What Can be improved</h4> <button role="addCardButton" id="btn addWall" onclick="addWall(this)"><i
+                            class="fas fa-plus-circle"></i></i></button>
+                </div>
+                <section id="whatCanBeImprovedSection" class="card">
+                </section>
+            </div>
+        </section>
+        <section class="wall ">
+            <div class="_thirdWall" id="startDoing">
+                <div role="heading" class="heading">
+                    <h4>Start Doing</h4> <button role="addCardButton" id="btn addWall" onclick="addWall(this)"><i class="fas fa-plus-circle"></i></i></button>
+                </div>
+                <section id="startDoingSection" class="card">
+                </section>
+            </div>
+            <div class="_fourthWall" id="actionItems">
+                <div role="heading" class="heading">
+                    <h4>Actions Item</h4> <button role="addCardButton" id="btn addWall" onclick="addWall(this)"><i
+                            class="fas fa-plus-circle"></i></i></button>
+                </div>
+                <section id="actionItemsSection" class="card">
+                </section>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
