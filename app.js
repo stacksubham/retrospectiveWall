@@ -19,7 +19,7 @@ var restoreDate = function ()
     {
         console.log(localStorage)
         let data = JSON.parse(localStorage.getItem('boards'));
-        let sectionId = `${cardBox.id}Section`;
+       // let sectionId = `${cardBox.id}Section`;
     }
 }
 
@@ -27,6 +27,8 @@ function addWall(param) {
     let cardBox = param.parentElement.parentElement;
     let sectionId = `${cardBox.id}Section`;
     let sections = document.getElementById(sectionId);
+    if(sections.children[0].tagName === "P")
+    sections.children[0].remove()
     let divTag = document.createElement('div');
     let textArea = document.createElement('textArea');
     let spanTag = document.createElement('span');
