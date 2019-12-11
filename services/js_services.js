@@ -23,6 +23,30 @@ var filterTagCreation = function () {
     })
 }
 
+var srcID ;
+var onDrag = function(e)
+{
+ srcID = e.target.id;
+}
+
+
+var dropTragert = document.querySelector(".wall");
+
+dropTragert.addEventListener("dragover", function (e) {
+    e.preventDefault();
+});
+
+dropTragert.addEventListener("drop", function (e) {
+    e.preventDefault();
+
+    let target = e.target;
+
+    e.target.lastElementChild.appendChild(document.getElementById(srcID));
+});
+
+
+
+
 var render = function () {
     this.filterTagCreation();
     this.restoreDate()

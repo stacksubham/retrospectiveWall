@@ -27,15 +27,17 @@ function addWall(param) {
     let cardBox = param.parentElement.parentElement;
     let sectionId = `${cardBox.id}Section`;
     let sections = document.getElementById(sectionId);
-    if(sections.children[0].tagName === "P")
-    sections.children[0].remove()
+  
     let divTag = document.createElement('div');
     let textArea = document.createElement('textArea');
     let spanTag = document.createElement('span');
 
     spanTag.setAttribute("onclick", "removeItem(this)");
     spanTag.setAttribute('class', 'close-icon');
+    divTag.setAttribute('draggable', 'true');
+    divTag.setAttribute('ondragstart', 'onDrag(event)');
     divTag.setAttribute('class', 'sticky-text');
+    divTag.setAttribute('id', new Date().getUTCMilliseconds());
     textArea.setAttribute('name', 'textarea');
     textArea.setAttribute('autocomplete', 'off');
     textArea.setAttribute('autofocus', true);
@@ -68,11 +70,13 @@ function addWall(param) {
     divTag.appendChild(textArea);
     divTag.appendChild(spanTag);
     sections.appendChild(divTag);
+
+
 }
 
+
 function removeItem(param) {
-    param.previousElementSibling.remove();
-    param.remove();
+ param.parentNode.remove()
 }
 
 function filterResult(param) {
